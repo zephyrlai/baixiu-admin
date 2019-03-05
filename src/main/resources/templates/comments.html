@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="utf-8">
-  <title>Comments &laquo; Admin</title>
-  <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="/vendors/nprogress/nprogress.css">
-  <link rel="stylesheet" href="/css/admin.css">
-  <script src="/vendors/nprogress/nprogress.js"></script>
-</head>
-<body>
-  <script>NProgress.start()</script>
-
-  <div class="main">
-    <nav class="navbar">
-      <button class="btn btn-default navbar-btn fa fa-bars"></button>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="profile.html"><i class="fa fa-user"></i>个人中心</a></li>
-        <li><a href="login.html"><i class="fa fa-sign-out"></i>退出</a></li>
-      </ul>
-    </nav>
-    <div class="container-fluid">
+<div class="container-fluid">
       <div class="page-title">
         <h1>所有评论</h1>
       </div>
@@ -95,12 +73,4 @@
         </tbody>
       </table>
     </div>
-  </div>
-
-  <div th:replace="inc/asider :: aside"></div>
-
-  <script src="/vendors/jquery/jquery.js"></script>
-  <script src="/vendors/bootstrap/js/bootstrap.js"></script>
-  <script>NProgress.done()</script>
-</body>
-</html>
+  

@@ -16,7 +16,7 @@ public class MyConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
         if(!registry.hasMappingForPattern("/**")){
-            registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+            registry.addResourceHandler("/**").addResourceLocations("classpath:/static/").addResourceLocations("classpath:../static/");
         }
         super.addResourceHandlers(registry);
     }
