@@ -1,6 +1,6 @@
-package cn.zephyr.mapper;
+package cn.zephyr.module.mapper;
 
-import cn.zephyr.entity.Person;
+import cn.zephyr.module.entity.Person;
 
 import java.util.List;
 

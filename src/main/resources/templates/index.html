@@ -13,12 +13,18 @@
 <script>
   $(function(){
     $(".a-menu").click(function(){
-      console.log($(this).attr("href"));
+      var htmlUrl = $(this).attr("href");
         $.get(
-        "/mvc/"+$(this).attr("href"),
+        "/mvc/"+htmlUrl,
         function(data){
+          // 全部清空，加载登录页
+          if(data.indexOf("DOCTYPE") != -1){
+            window.location.href="/login";
+          }else{
+            console.dir(data);
             $(".container-fluid").remove();
             $(".main").prepend($(data));
+          }
         });
       return false;
     })
@@ -31,7 +37,7 @@
     <nav class="navbar">
       <button class="btn btn-default navbar-btn fa fa-bars"></button>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="profile.html"><i class="fa fa-user"></i>个人中心</a></li>
+        <li><a href="profile.html"><i class="fa fa-user"></i>个人中心11</a></li>
         <li><a href="login.html"><i class="fa fa-sign-out"></i>退出</a></li>
       </ul>
     </nav>

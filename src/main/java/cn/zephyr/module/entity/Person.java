@@ -1,4 +1,4 @@
-package cn.zephyr.entity;
+package cn.zephyr.module.entity;
 
 import lombok.Data;
 

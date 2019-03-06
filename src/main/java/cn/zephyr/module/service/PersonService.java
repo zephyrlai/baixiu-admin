@@ -1,6 +1,6 @@
-package cn.zephyr.service;
+package cn.zephyr.module.service;
 
-import cn.zephyr.entity.Person;
+import cn.zephyr.module.entity.Person;
 
 import java.util.List;
 

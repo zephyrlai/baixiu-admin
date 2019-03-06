@@ -9,7 +9,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   # static-locations:允许在html文件中使用../static/的形式
   resources:
-    static-locations: classpath:/static/,/static/
+    static-locations: classpath:/templates/,/templates/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,/static/,classpath:/public/
   mvc:
     static-path-pattern: /static/**
 
