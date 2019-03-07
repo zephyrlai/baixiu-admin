@@ -39,6 +39,17 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @RequestMapping(value = "getLoginImg", method = RequestMethod.GET)
+    @ResponseBody
+    @NoLogin
+    public ResultDTO<String> getLoginImg(String email){
+        BuUsers buUsers = authService.queryByEmail(email);
+        if(null != buUsers)
+            return ResultDTO.operateSucc(buUsers.getAvatar());
+        else
+            return ResultDTO.operateSucc("../static/img/default.png");
+    }
+
     @RequestMapping(value = "login", method = RequestMethod.POST)
     @ResponseBody
     @NoLogin

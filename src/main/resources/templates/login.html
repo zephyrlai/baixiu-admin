@@ -15,6 +15,7 @@
 <script src="../static/vendors/jquery/jquery.min.js"></script>
 <script>
   $(function(){
+    // 点击登录事件
     $("button").click(function(){
       $.ajax({
         url:"/auth/login",
@@ -45,8 +46,24 @@
         }
       })
      
+    });
+    
+    // 输入完用户名，回显用户头像
+    $("#email").blur(function(){
+      $.get(
+        "/auth/getLoginImg",
+        {"email":$(this).val()},
+        function(resp){
+          if(resp.status == 200 && resp.data != null){
+            $(".avatar").fadeOut(function(){
+              $(".avatar").load(function(){
+                $(".avatar").fadeIn();
+              }).attr("src",resp.data);
+            })
+          }
+        })
+      })
     })
-  })
 </script>
 <body>
   <div class="login">

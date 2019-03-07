@@ -37,7 +37,7 @@
     <nav class="navbar">
       <button class="btn btn-default navbar-btn fa fa-bars"></button>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="profile.html"><i class="fa fa-user"></i>个人中心11</a></li>
+        <li><a href="profile.html"><i class="fa fa-user"></i>个人中心</a></li>
         <li><a href="/auth/logout"><i class="fa fa-sign-out"></i>退出</a></li>
       </ul>
     </nav>
@@ -68,8 +68,8 @@
 
   <div class="aside">
     <div class="profile">
-      <img class="avatar" src="../uploads/avatar.jpg">
-      <h3 class="name">布头儿</h3>
+      <img class="avatar" th:attr="src=${userInfo.avatar}">
+      <h3 class="name" th:text="${userInfo.nickname}">用户名</h3>
     </div>
     <ul class="nav">
       <li class="active">
