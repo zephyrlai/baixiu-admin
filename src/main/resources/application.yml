@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/zephyr?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://127.0.0.1:3306/baixiu?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: 12345
     driver-class-name: com.mysql.jdbc.Driver
@@ -21,4 +21,5 @@ logging:
   level:
     cn:
       zephyr:
-        mapper: debug
+        module:
+          mapper: debug

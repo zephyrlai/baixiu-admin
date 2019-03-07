@@ -14,4 +14,6 @@ public interface BuUsersMapper {
     int updateByPrimaryKeySelective(BuUsers record);
 
     int updateByPrimaryKey(BuUsers record);
+
+    BuUsers queryByEmail(String email);
 }

@@ -125,4 +125,13 @@
       status = #{status,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="queryByEmail"
+          parameterType="java.lang.String"
+          resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List" />
+    from users
+    where email = #{email,jdbcType=INTEGER}
+  </select>
 </mapper>

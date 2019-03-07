@@ -51,7 +51,7 @@ public class AuthAspect {
         UserInfoDTO userInfoDTO = (UserInfoDTO)request.getSession().getAttribute(CommonData.USER_INFO);
         try {
             Method method = ((MethodSignature) joinPoint.getSignature()).getMethod();
-            logger.info("------登录状态校验,method:{}-----",method.getDeclaringClass()+"."+method.getName());
+//            logger.info("------登录状态校验,method:{}-----",method.getDeclaringClass()+"."+method.getName());
             if(method.getAnnotation(NoLogin.class) == null){
                 if(null == userInfoDTO){
                     return "redirect:/login";
@@ -61,6 +61,7 @@ public class AuthAspect {
             result = joinPoint.proceed();
         } catch (Throwable e) {
             logger.info("发生异常：",e.getMessage());
+            e.printStackTrace();
         }
         return result;
     }

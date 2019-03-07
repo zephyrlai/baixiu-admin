@@ -1,5 +1,6 @@
 package cn.zephyr.dto;
 
+import cn.zephyr.module.entity.BuUsers;
 import lombok.Data;
 
 /**
@@ -9,11 +10,11 @@ import lombok.Data;
  */
 @Data
 public class UserInfoDTO {
-    private String email;
+    private BuUsers users;
     private Long loginTime;
 
-    public UserInfoDTO(String email, Long loginTime) {
-        this.email = email;
+    public UserInfoDTO(BuUsers users, Long loginTime) {
+        this.users = users;
         this.loginTime = loginTime;
     }
 }

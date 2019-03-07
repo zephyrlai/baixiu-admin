@@ -28,14 +28,20 @@
           else if(data.status == 403){
             $(".alert-danger").show();
             $("form").addClass("shake animated");
+            clock = setInterval(function(){
+              if($("form").hasClass("shake animated"))
+                $("form").removeClass("shake animated");
+              clearInterval(clock); //清除js定时器
+            }, 500);
+            
           };
         },
         error:function(data){
           console.dir(data);
-          alert(data.status);
+          alert("登录功能异常");
         },
         complete:function(){
-          
+
         }
       })
      
@@ -52,11 +58,11 @@
       </div>
       <div class="form-group">
         <label for="email" class="sr-only">邮箱</label>
-        <input id="email" type="email"  name="eMail" class="form-control" placeholder="邮箱" autofocus value="111111">
+        <input id="email" type="email"  name="eMail" class="form-control" placeholder="邮箱" autofocus value="laizonghao@foxmail.com">
       </div>
       <div class="form-group">
         <label for="password" class="sr-only">密码</label>
-        <input id="password" type="password" name="password" class="form-control" placeholder="密码" value="111111">
+        <input id="password" type="password" name="password" class="form-control" placeholder="密码" value="123456">
       </div>
       <button type = "button" class="btn btn-primary btn-block" >登 录</button>
     </form>
